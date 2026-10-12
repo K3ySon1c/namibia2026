@@ -134,7 +134,7 @@ und trage diese beim passenden Tag ein.
 erhöhen:**
 
 ```js
-const CACHE = 'namibia-v7';   //  ->  'namibia-v8'
+const CACHE = 'namibia-v8';   //  ->  'namibia-v9'
 ```
 
 Ohne diesen Schritt behalten die Handys den alten Stand, weil der Service Worker konsequent
@@ -215,8 +215,12 @@ sonst fehlt es offline.
 * Keine externen Ressourcen: System-Schriften über einen Font-Stack, Icons als
   Inline-SVG-Sprite im HTML, App-Icons im Repository.
 * Ausschließlich relative Pfade, `start_url` und `scope` sind `./`.
+* Die App-Kennung `id` im Manifest ist `./?app=namibia-2026-v2`. Android erkennt die installierte
+  App an dieser Kennung. Sie wurde geändert, weil Android nach einer Neuinstallation die alte
+  Kennung noch als installiert führte. Die Kennung nicht zurücksetzen und nur ändern, wenn sich
+  die App auf einem Gerät nicht mehr installieren lässt.
 * Service Worker: legt beim `install` **alle** Dateien einschließlich der 18 Tagesfotos in den
-  versionierten Cache `namibia-v7` und liefert danach **cache-first**. Alte Caches werden beim `activate` gelöscht.
+  versionierten Cache `namibia-v8` und liefert danach **cache-first**. Alte Caches werden beim `activate` gelöscht.
   Nach dem ersten Laden findet kein Netzwerkaufruf mehr statt.
 * iOS: `apple-mobile-web-app-capable`, `black-translucent`-Statusleiste,
   `apple-touch-icon` in 180×180, `viewport-fit=cover` und `env(safe-area-inset-*)` in den

@@ -10,7 +10,7 @@
    Sonst behalten die Geräte den alten Stand.
    ========================================================================== */
 
-const CACHE = 'namibia-v7';
+const CACHE = 'namibia-v8';
 
 const ASSETS = [
   './',
